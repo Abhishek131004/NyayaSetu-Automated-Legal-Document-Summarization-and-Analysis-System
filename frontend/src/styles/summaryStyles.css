@@ -1,0 +1,137 @@
+/* Enhanced Styling for Document Summaries */
+
+.summary-container {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.summary-header {
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.summary-header::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 3px;
+  background: linear-gradient(90deg, #3b82f6, #93c5fd);
+  border-radius: 2px;
+}
+
+.summary-section {
+  transition: all 0.3s ease;
+  overflow-x: hidden;
+  word-wrap: break-word;
+  background-color: #ffffff;
+}
+
+.summary-section:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.summary-section h3,
+.summary-section h4 {
+  letter-spacing: 0.02em;
+  font-weight: 600;
+  position: relative;
+  text-align: left;
+}
+
+.summary-section ul {
+  margin-bottom: 0;
+  text-align: left;
+}
+
+.summary-section li {
+  margin-bottom: 0.5rem;
+  line-height: 1.6;
+  padding-left: 0.5rem;
+  text-align: left;
+}
+
+.summary-section p {
+  text-align: left;
+  hyphens: auto;
+  line-height: 1.7;
+  margin-bottom: 1rem;
+  letter-spacing: 0.01em;
+  overflow-wrap: break-word;
+}
+
+/* Bold text for free trial summary */
+.free-trial-summary .summary-section li,
+.free-trial-summary .summary-section p {
+  font-weight: bold;
+}
+
+/* Enhanced Hindi font support */
+.font-hindi {
+  font-family: 'Noto Sans', 'Arial Unicode MS', sans-serif;
+  line-height: 1.8;
+  letter-spacing: 0.02em;
+}
+
+/* Improved readability for both English and Hindi text */
+.text-gray-800 {
+  color: #2d3748 !important; /* Slightly darker for better contrast */
+}
+
+/* Better spacing for translation controls */
+.translation-button {
+  transition: all 0.2s ease;
+}
+
+.translation-button:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  .summary-section {
+    padding: 1rem !important;
+    margin-bottom: 1rem !important;
+  }
+  
+  .summary-section h3 {
+    font-size: 1.25rem !important;
+    padding-bottom: 0.5rem !important;
+    margin-bottom: 0.75rem !important;
+  }
+  
+  .summary-section h4 {
+    font-size: 1.1rem !important;
+    padding-bottom: 0.5rem !important;
+  }
+  
+  .summary-section li,
+  .summary-section p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+  
+  .summary-content ul {
+    padding-left: 1rem !important;
+  }
+  
+  .party-obligations {
+    padding: 0.75rem !important;
+  }
+  
+  .translation-controls {
+    flex-direction: column !important;
+    align-items: stretch !important;
+  }
+  
+  .translation-button, 
+  .translation-mode-button {
+    width: 100%;
+    justify-content: center;
+  }
+}

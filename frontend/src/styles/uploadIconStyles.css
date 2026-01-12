@@ -1,0 +1,20 @@
+/* Additional styles for the upload icon clickable functionality */
+
+.icon-container {
+  position: relative;
+  display: inline-block;
+}
+
+/* Removed the "Click me" tooltip since the whole area is now clickable */
+
+/* Enhance the upload icon on hover of the entire container */
+@keyframes gentle-pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+div[role="presentation"]:hover .upload-icon {
+  animation: gentle-pulse 1.5s ease-in-out infinite;
+  filter: drop-shadow(0 4px 8px rgba(59, 130, 246, 0.4));
+}

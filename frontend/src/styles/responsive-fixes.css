@@ -1,0 +1,200 @@
+/* Responsive fixes to ensure the website fits completely in browser for PC and laptop */
+
+/* Custom property for viewport height, solves mobile browser issues */
+:root {
+  --vh: 1vh;
+}
+
+/* Main container - prevents horizontal scrolling */
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+.landing-page {
+  max-width: 100vw;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+/* Height control for sections */
+.landing-page section {
+  min-height: fit-content;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.hero-section {
+  height: auto;
+  min-height: 50vh; /* minimum height */
+  max-height: 100vh;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+/* Ensure content doesn't overflow */
+.hero-content, 
+.features-container,
+.workflow-container,
+.industry-container,
+.pricing-container,
+.try-free-container {
+  width: 100%;
+  max-width: 95%;
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+}
+
+/* Optimize feature cards */
+.features-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+@media screen and (min-width: 768px) {
+  .features-container {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+  }
+}
+
+/* Responsive typography */
+@media screen and (min-width: 1024px) {
+  .hero-content h1 {
+    font-size: min(3rem, 5vw);
+  }
+  
+  .hero-subtitle {
+    font-size: min(1.25rem, 2vw);
+  }
+
+  section h2 {
+    font-size: min(2.75rem, 4vw);
+  }
+}
+
+/* Control vertical spacing for large screens */
+@media screen and (min-height: 900px) {
+  .landing-page section {
+    padding-top: 4vh;
+    padding-bottom: 4vh;
+  }
+  
+  .features-container,
+  .workflow-container,
+  .industry-container,
+  .pricing-container {
+    margin-top: 3vh;
+  }
+}
+
+/* Better fit for wide screens */
+@media screen and (min-width: 1440px) {
+  .hero-content, 
+  .features-container,
+  .workflow-container,
+  .industry-container,
+  .pricing-container,
+  .try-free-container {
+    max-width: 1400px;
+  }
+}
+
+/* Adjust workflow steps for better fit */
+.workflow-step {
+  max-height: 80vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+@media screen and (max-width: 992px) {
+  .workflow-step, 
+  .workflow-step.reverse {
+    flex-direction: column;
+    gap: 3rem;
+    max-height: none;
+  }
+  
+  .workflow-content {
+    width: 100%;
+  }
+}
+
+.workflow-image {
+  max-height: 350px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.workflow-image img {
+  max-height: 300px;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+/* Optimize industry cards for better fit */
+.industry-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+/* Fix spacing in try free section */
+.try-free-section {
+  padding-top: 2rem;
+  padding-bottom: 3rem;
+}
+
+/* Optimize pricing section layout */
+.pricing-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  width: 100%;
+  max-width: 1200px;
+}
+
+/* Better container scaling for pricing cards */
+.pricing-card {
+  flex: 1 1 300px;
+  max-width: 350px;
+  min-width: 280px;
+  margin: 0 auto;
+  height: auto;
+}
+
+@media screen and (min-width: 992px) {
+  .pricing-card.featured {
+    margin-top: -1rem;
+    margin-bottom: -1rem;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .pricing-card {
+    max-width: 95%;
+    flex: 1 1 100%;
+  }
+  
+  .pricing-card.featured {
+    order: -1;
+    margin-bottom: 1rem;
+  }
+}

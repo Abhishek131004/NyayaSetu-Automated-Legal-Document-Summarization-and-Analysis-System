@@ -1,0 +1,116 @@
+/* Free Trial Upload Styles */
+
+/* Removed border-3 class */
+
+.upload-text-container {
+  transition: all 0.3s ease;
+  /* Text styling only, no borders or shadows */
+}
+
+/* Make the upload icon appear more interactive */
+div[role="presentation"] svg {
+  transition: transform 0.3s ease;
+}
+
+div[role="presentation"]:hover svg {
+  transform: scale(1.1);
+}
+
+/* Style for the file name display */
+.bg-blue-100 {
+  background-color: #dbeafe;
+}
+
+/* Apply pointer to the entire container since the whole area is clickable */
+div[role="presentation"] {
+  cursor: pointer;
+}
+
+/* Still keep the icon hover effect */
+.icon-container:hover .upload-icon {
+  transform: scale(1.1);
+  filter: drop-shadow(0 4px 8px rgba(59, 130, 246, 0.5));
+}
+
+/* Override for the upload text to ensure line breaks are preserved */
+.upload-text-container p {
+  white-space: pre-line;
+  line-height: 1.5;
+  color: #4b5563; /* text-gray-600 equivalent */
+  font-weight: 500;
+  margin-top: 8px;
+}
+
+/* Subtle hover effects - Apply only to the container and not affecting cursor */
+div[role="presentation"]:hover {
+  transform: translateY(-2px);
+  transition: transform 0.3s ease;
+  background-color: rgba(239, 246, 255, 0.6); /* Very light blue background on hover */
+}
+
+/* Pulse animation for the file upload icon */
+@keyframes gentle-pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+  100% { transform: scale(1); }
+}
+
+/* Apply animation to the icon only */
+.icon-container .upload-icon {
+  animation: gentle-pulse 3s infinite ease-in-out;
+  filter: drop-shadow(0 4px 6px rgba(59, 130, 246, 0.3));
+  transition: all 0.3s ease;
+}
+
+/* Add a glow effect on hover to indicate it's clickable */
+.icon-container:hover .upload-icon {
+  filter: drop-shadow(0 6px 12px rgba(59, 130, 246, 0.5));
+  color: #1e40af; /* Darker blue on hover */
+}
+
+/* Try Another Document button styling */
+#try-another-document-button {
+  transition: all 0.3s ease;
+  font-weight: 500;
+  width: 100%;
+  margin-top: 0.5rem;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+#try-another-document-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  background-color: #dbeafe;
+}
+
+#try-another-document-button:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(37, 99, 235, 0.1);
+  transform: scaleX(0);
+  transform-origin: 0 50%;
+  transition: transform 0.5s ease-out;
+}
+
+#try-another-document-button:hover:before {
+  transform: scaleX(1);
+}
+
+/* Enhanced error message styling */
+.quota-error-container {
+  border-left: 4px solid #eab308;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(234, 179, 8, 0.4); }
+  70% { box-shadow: 0 0 0 5px rgba(234, 179, 8, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(234, 179, 8, 0); }
+}
