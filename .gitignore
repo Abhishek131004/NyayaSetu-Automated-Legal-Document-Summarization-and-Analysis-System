@@ -1,3 +1,7 @@
 .env
 .env.*
 *.env
+backend/.env
+echo "*.zip" >> .gitignore
+git add .gitignore
+*.zip
